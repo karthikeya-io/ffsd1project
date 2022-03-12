@@ -4,8 +4,21 @@
 nav {
     border-radius: 3px;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 .form-control.me-2{
     border-radius: 20px;
+    transition: 300ms ;
+
+}
+.form-control.me-2:focus {
+  /* width: 300px; */
+  transform: scale(1.2, 1);
+  transform-origin: right;
 }
 .nav-item:hover, a:hover{
     background-color: rgba(255, 255, 255, .3);
@@ -31,6 +44,7 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     align-items: flex-start;
+    margin-top: 75px;
   }
   
 .card {
@@ -89,16 +103,14 @@ nav {
 }
 
 #myVideo {
-    position:relative;
+    position:absolute;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    object-fit: cover;
+    z-index: -1;
   }
   
   /* Add some content at the bottom of the video/page */
-  .nav {
-      position: relative;
-  }
   .content {
     position: fixed;
     bottom: 0;
@@ -106,6 +118,7 @@ nav {
     color: #f1f1f1;
     width: 100%;
     padding: 20px;
+    overflow: hidden;
   }
 
 
@@ -127,3 +140,93 @@ nav {
     font-weight: bold;
     margin: 30px 0 60px 0;
 }
+
+/* styles for course page */
+/* The side navigation menu */
+
+.sidenav {
+    margin-top: 36px;
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 300px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: white;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a, .sidebar-dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    background-color: white;
+    
+
+  }
+  
+  .active-lesson {
+    background-color: rgb(13,110,253);
+    color: white;
+  }
+
+  .dropdown-container {
+    display: none;
+    background-color: rgb(13,110,253);
+    /* padding-left: 8px; */    
+  }
+  
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: green;
+  }
+  
+  /* Style page content */
+  .main {
+     /* Same as the width of the sidebar */
+    margin: 55px 300px 5px 0;
+  }
+  .course-nav {
+    width: 100%;
+    background-color: white;
+    height: 50px;
+  }
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+  @media screen and (max-width: 700px) {
+    .sidenav {
+      width: 100%;
+      right: 0;
+      height: auto;
+      position: relative;
+    }
+    .sidenav a {float: left;}
+    .main {margin: 10px;}
+  }
+
+  #course-video {
+      width: 100%;
+      height: 90%;
+  }
+
+  #student-signupform {
+    margin: 60px 10px 10px 10px;
+  }
