@@ -275,7 +275,87 @@ nav {
  .container.info {
    width: 200%;
  }
-  
 
-  
+ /* styles for help page */
 
+ .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  min-width: 200px;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.help-active, .accordion:hover {
+  background-color: blueviolet; 
+  font-size: large;
+}
+/*button{
+  //  background-color: rgb(49, 4, 49);
+//}*/
+#help-body{
+    background-color: black;
+    background-image: url(images/faqs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-left: 100px;
+    margin-right: 600px
+    
+}
+
+.help-heading{
+  margin-top: 100px;
+  background-color: blueviolet;
+  font-size: xx-large;
+}
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  min-width: 182px
+}
+
+/* styles for student profile page */
+
+.card.card-student {
+  width: 100%;
+  height: 500px;
+
+}
+
+.profile-body{
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-left {
+  flex: 30%;
+}
+
+.profile-right {
+  flex: 70%;
+}
+
+#profile-pic {
+  margin: 50px 20px 20px 125px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profile-courses {
+  margin: 20px;
+}
+
+.profile-card-body {
+  padding-bottom: 20px;
+}
