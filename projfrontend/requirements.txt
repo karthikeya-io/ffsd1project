@@ -1,0 +1,9 @@
+student profile page 
+forget password page
+home page for student
+instructor dashboard aka homepage
+upload course button -> page to load lessons
+search button functationality and sort filter(courses)
+administrator page
+rate button in course page
+
