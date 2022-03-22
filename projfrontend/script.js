@@ -63,8 +63,7 @@ for ( i = 0; i < btns.length; i++) {
   });
 }
 
+
 //script for help.html
-
-
 
 })
