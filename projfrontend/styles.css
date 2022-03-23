@@ -291,7 +291,107 @@ nav {
  .container.info {
    width: 200%;
  }
+
+
+ /* styles for help page */
+
+ .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  min-width: 200px;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.help-active, .accordion:hover {
+  background-color: blueviolet; 
+  font-size: large;
+}
+/*button{
+  //  background-color: rgb(49, 4, 49);
+//}*/
+#help-body{
+    background-color: black;
+    background-image: url(images/faqs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-left: 100px;
+    margin-right: 600px
+    
+}
+
+.help-heading{
+  margin-top: 100px;
+  background-color: blueviolet;
+  font-size: xx-large;
+}
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  min-width: 182px
+}
+
+/* styles for student profile page */
+
+.card-student {
+  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+
+  margin: 50px auto;
+  width: 90%;
+  height: 500px;
+}
+
+.profile-body{
   
+  margin: 50px 0 0 0 ;
+  margin-bottom: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-left {
+  position: sticky;
+  top: 0;
+  /* background-color: rgb(199, 225, 233); */
+  background: url(images/profile302.jpg);
+  background-size: cover;
+  height: 100vh;
+  flex: 30%;
+}
+
+.profile-right {
+    flex: 70%;
+}
+
+.card-head-std {
+  min-height: 200px;
+}
+
+#profile-pic {
+  margin: 50px auto;
+  /* margin: 50px 20px 20px 115px; */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.profile-courses {
+  margin: 20px 20px 0 20px;
+}
+
+.profile-card-body {
+  padding-bottom: 20px;
+}
 
   .sizing{
     width: 50%;
@@ -306,9 +406,10 @@ nav {
     border-radius: 50%;
   }
   .perks{
-    margin-top: 15%;
+    margin-top: 10%;
    margin-left: 5%; 
   }
+  
   .perks-items{
     width: 90%;
     height: fit-content;
@@ -316,4 +417,15 @@ nav {
   .perks-col{
     background-color: lightblue;
     height: 100vh;
+  }
+
+  .business-body {
+    overflow: hidden;
+    position: fixed;
+  }
+
+  .container.card {
+    margin-left: 150px;
+    width: 500px;
+    height: 40px;
   }
