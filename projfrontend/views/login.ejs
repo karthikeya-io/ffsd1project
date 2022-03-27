@@ -14,6 +14,7 @@
   <body class="login-body">
     <%- include('./partials/nav.ejs') %>
 
+    
 
      <section class="form mx/loginimg2.jpg">  <div class="container">
              <div class="row no-gutters">
@@ -23,20 +24,23 @@
                  <div class="col-lg-7 px-5 pt-5">
                     <h1 class="font-weight-bold py-3" >Welcome!</h1>
                     <h4>Sign into your account</h4>
-                     <form >
+                     <form onsubmit = "event.preventDefault(); myValidation();">
                          <div class="form-row">
                              <div class="col-lg-7">
-                                 <input type="email" placeholder="Email-Address" class="form-control my-3 p-4" >
+                                 <input type="email" placeholder="Email-Address" class="form-control my-3 p-4" id="email">
+                                 <small class="error-email"></small>
                              </div>
                          </div>
                          <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="******" class="form-control my-3 p-4">
+                                <input type="password" placeholder="******" class="form-control my-3 p-4" id="password">
+                                <small class="error-password"></small>
+
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                            <button type="button" class="btn btn-outline-primary btn-login">Login</button>
+                            <button type="submit" class="btn btn-outline-primary btn-login" id="login-btn">Login</button>
                             </div>
                         </div>
                         <a href="#">Forget password</a>
@@ -47,4 +51,41 @@
          </div>
      </section>
   </body>
+  <script>
+    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    const loginbtn = document.querySelector('#login-btn')
+    
+    function myValidation() {
+        const email = document.querySelector('#email')
+        const EmailAddress = email.value
+
+        if(EmailAddress.length === 0) {
+            document.querySelector('.error-email').innerText = "Enter email"
+            return false
+        } else {
+            document.querySelector('.error-email').innerText = ""
+            if(EmailAddress.match(mailformat)) { 
+             document.querySelector('.error-email').innerText = ""
+            }else {
+                document.querySelector('.error-email').innerText = "Invalid email"
+                return false
+            }
+        }
+
+        const password = document.querySelector('#password')
+        const passwordValue = password.value
+
+        if(passwordValue.length === 0) {
+            document.querySelector('.error-password').innerText = "Enter Password"
+            return false
+        } else {
+            document.querySelector('.error-password').innerText = ""  
+        } 
+        return true       
+    }
+    
+
+      console.log(email);
+  </script>
 </html>

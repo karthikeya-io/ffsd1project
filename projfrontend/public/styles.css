@@ -1,149 +1,156 @@
- *, *::before, *::after {
-    font-family: 'Open Sans', sans-serif;
+*,
+*::before,
+*::after {
+  font-family: "Open Sans", sans-serif;
 }
 
-
 nav {
-    border-radius: 3px;
+  height: 70px;
+  border-radius: 3px;
 }
 
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
-.form-control.me-2{
-    border-radius: 20px;
-    transition: 300ms ;
-
+.form-control.me-2 {
+  border-radius: 20px;
+  transition: 300ms;
 }
 .form-control.me-2:focus {
   /* width: 300px; */
   transform: scale(1.2, 1);
   transform-origin: right;
 }
-.nav-item:hover, a:hover{
-    background-color: rgba(255, 255, 255, .3);
-    border-radius: 20px;
-
+.nav-item:hover,
+a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
 }
 
 .btn {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 .icon {
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
 .icontext {
-    color:aliceblue; 
-    text-decoration:none;
-    padding: 2px;
+  color: aliceblue;
+  text-decoration: none;
+  padding: 2px;
 }
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    align-items: flex-start;
-    margin-top: 75px;
-  }
-  
+
+.courses-body {
+  background-image: url(images/student-home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 75px;
+}
+
 .card {
-    --padding: 1rem;
-    background: white;
-    border: 1px solid #777;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 20px;
+  --padding: 1rem;
+  background: rgba(204, 204, 204, 0.5);
+  border: 1px solid #777;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px;
 }
-  
+
 .card.card-shadow {
-    border: none;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
-  
+
 .card-header {
-    font-size: 1.5rem;
-    padding: var(--padding);
-    padding-bottom: 0;
-    margin-bottom: .5rem;
+  font-size: 1.5rem;
+  padding: var(--padding);
+  padding-bottom: 0;
+  margin-bottom: 0.5rem;
 }
-  
+
 .card-header.card-image {
-    padding: 0;
-    overflow: hidden;
+  padding: 0;
+  overflow: hidden;
 }
-  
+
 .card-header.card-image > img {
-    display: block;
-    width: 100%;
-    max-height: 200px;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: center;
-    transition: 200ms transform ease-in-out;
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  transition: 200ms transform ease-in-out;
 }
-  
+
 .card:hover > .card-header.card-image > img {
-    transform: scale(1.025);
+  transform: scale(1.025);
 }
-  
+
 .card-body {
-    font-size: .9rem;
-    padding: 0 var(--padding);
+  font-size: 0.9rem;
+  padding: 0 var(--padding);
 }
 
 .card-body-business {
-    font-size: .9rem;
-    padding: 0 var(--padding);
-    margin-left: 15%;
-  }
-  
+  font-size: 0.9rem;
+  padding: 0 var(--padding);
+  margin-left: 15%;
+}
+
 .card-footer {
-    margin-top: 1rem;
-    padding: var(--padding);
-    padding-top: 0;
+  margin-top: 1rem;
+  padding: var(--padding);
+  padding-top: 0;
 }
 
 .card-footer > button {
-    margin: 5px;
+  margin: 5px;
 }
 
 #myVideo {
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-  
-  /* Add some content at the bottom of the video/page */
-  .content {
-    position: fixed;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
-    overflow: hidden;
-  }
-
-
-.login-body  {
-    background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.login-img { 
-    border-radius: 45px 150px;
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    padding-top: 20px;
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
 }
 
-.login-img2 { 
+.login-body {
+  background-color: white;
+}
+
+.login-img {
+  border-radius: 45px 150px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.login-img2 {
   border-radius: 45px 150px;
   overflow: hidden;
   position: relative;
@@ -153,149 +160,170 @@ nav {
 }
 
 .btn-login {
-    width: 100%;
-    height: 50px;
-    font-weight: bold;
-    margin: 30px 0 60px 0;
+  width: 100%;
+  height: 50px;
+  font-weight: bold;
+  margin: 30px 0 60px 0;
 }
 
 /* styles for course page */
 /* The side navigation menu */
 
 .sidenav {
-    margin-top: 36px;
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 300px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+  margin-top: 50px;
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 350px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: white;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* The navigation menu links */
+.sidenav a,
+.sidebar-dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+}
+
+.active-lesson {
+  background-color: rgb(13, 110, 253);
+  color: white;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: rgb(13, 110, 253);
+  /* padding-left: 8px; */
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: green;
+}
+
+/* Style page content */
+.main {
+  /* Same as the width of the sidebar */
+  margin: 75px 350px 5px 0;
+}
+.course-nav {
+  display: inline-flex;
+  width: 100%;
+  background-color: white;
+  height: 50px;
+}
+
+.course-nav .btn {
+  margin-left: auto;
+}
+
+.course-nav .btn:hover {
+  background-color: gold;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sidenav {
+    width: 100%;
     right: 0;
-    background-color: white;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-    padding-bottom: 40px;
+    height: auto;
+    position: relative;
   }
-  
-  /* The navigation menu links */
-  .sidenav a, .sidebar-dropdown-btn {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    display: block;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-    background-color: white;
-    
-
+  .sidenav a {
+    float: left;
   }
-  
-  .active-lesson {
-    background-color: rgb(13,110,253);
-    color: white;
-  }
-
-  .dropdown-container {
-    display: none;
-    background-color: rgb(13,110,253);
-    /* padding-left: 8px; */    
-  }
-  
-  .fa-caret-down {
-    float: right;
-    padding-right: 8px;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: green;
-  }
-  
-  /* Style page content */
   .main {
-     /* Same as the width of the sidebar */
-    margin: 55px 300px 5px 0;
+    margin: 10px;
   }
-  .course-nav {
-    width: 100%;
-    background-color: white;
-    height: 50px;
+  .row-courseinfo {
+    flex-direction: column;
   }
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+}
+
+#course-video {
+  width: 100%;
+  height: 90%;
+}
+
+#student-signupform {
+  margin: 60px 10px 10px 10px;
+}
 
 
-  @media screen and (max-width: 700px) {
-    .sidenav {
-      width: 100%;
-      right: 0;
-      height: auto;
-      position: relative;
-    }
-    .sidenav a {float: left;}
-    .main {margin: 10px;}
-    .row-courseinfo {   
-      flex-direction: column;
-    }
+.courseinfo-body {
+  background-image: url(images/student-home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 
-  }
+.row-courseinfo {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  #course-video {
-      width: 100%;
-      height: 90%;
-  }
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side-courseinfo {
+  margin-top: 50px;
+  flex: 30%;
+  background-color: rgb(199, 225, 233);
+  /* background-color: #f1f1f1; */
+  padding: 20px;
+}
 
-  #student-signupform {
-    margin: 60px 10px 10px 10px;
-  }
+/* Main column */
+.main-courseinfo {
+  margin-top: 50px;
+  flex: 70%;
+  padding: 20px;
+}
 
-  .row-courseinfo {  
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  /* Create two unequal columns that sits next to each other */
-  /* Sidebar/left column */
-  .side-courseinfo {
-    margin-top: 50px;
-    flex: 30%;
-    background-color: rgb(199, 225, 233);
-    /* background-color: #f1f1f1; */
-    padding: 20px;
-  }
-  
-  /* Main column */
-  .main-courseinfo {
-    margin-top: 50px;
-    flex: 70%;
-    background-color: white;
-    padding: 20px;
-  }
-  
-  /* Fake image, just for this example */
-  .fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-  }
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
 
- .stars {
-   width: 15px;
-   height: 15px;
- }
+.stars {
+  width: 15px;
+  height: 15px;
+}
 
- .container.info {
-   width: 200%;
- }
+.container.info {
+  width: 200%;
+}
 
+/* styles for help page */
 
- /* styles for help page */
-
- .accordion {
+.accordion {
   background-color: #eee;
   color: #444;
   cursor: pointer;
@@ -309,25 +337,25 @@ nav {
   transition: 0.4s;
 }
 
-.help-active, .accordion:hover {
-  background-color: blueviolet; 
+.help-active,
+.accordion:hover {
+  background-color: blueviolet;
   font-size: large;
 }
 /*button{
   //  background-color: rgb(49, 4, 49);
 //}*/
-#help-body{
-    background-color: black;
-    background-image: url(images/faqs.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin-left: 100px;
-    margin-right: 600px
-    
+#help-body {
+  background-color: black;
+  background-image: url(images/faqs.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-left: 100px;
+  margin-right: 600px;
 }
 
-.help-heading{
+.help-heading {
   margin-top: 100px;
   background-color: blueviolet;
   font-size: xx-large;
@@ -337,23 +365,26 @@ nav {
   display: none;
   background-color: white;
   overflow: hidden;
-  min-width: 182px
+  min-width: 182px;
 }
 
 /* styles for student profile page */
 
 .card-student {
-  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
+  background: rgb(
+    204,
+    204,
+    204
+  ); /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.5);
 
   margin: 50px auto;
   width: 90%;
   height: 500px;
 }
 
-.profile-body{
-  
-  margin: 50px 0 0 0 ;
+.profile-body {
+  margin: 50px 0 0 0;
   margin-bottom: 0px;
   display: flex;
   flex-wrap: wrap;
@@ -370,7 +401,7 @@ nav {
 }
 
 .profile-right {
-    flex: 70%;
+  flex: 70%;
 }
 
 .card-head-std {
@@ -393,39 +424,120 @@ nav {
   padding-bottom: 20px;
 }
 
-  .sizing{
-    width: 50%;
-    height: fit-content;
-    margin-left: 25%;
-  }
+.sizing {
+  width: 50%;
+  height: fit-content;
+  margin-left: 25%;
+}
 
-  .business-image{
-    margin-left: 15%;
-    width: 20vw;
-    height: 40vh;
-    border-radius: 50%;
-  }
-  .perks{
-    margin-top: 10%;
-   margin-left: 5%; 
-  }
-  
-  .perks-items{
-    width: 90%;
-    height: fit-content;
-  }
-  .perks-col{
-    background-color: lightblue;
-    height: 100vh;
-  }
+.business-image {
+  margin-left: 15%;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 50%;
+}
+.perks {
+  margin-top: 10%;
+  margin-left: 5%;
+}
 
-  .business-body {
-    overflow: hidden;
-    position: fixed;
-  }
+.perks-items {
+  width: 90%;
+  height: fit-content;
+}
+.perks-col {
+  background-color: lightblue;
+  height: 100vh;
+}
 
-  .container.card {
-    margin-left: 150px;
-    width: 500px;
-    height: 40px;
-  }
+.business-body {
+  overflow: hidden;
+  position: fixed;
+}
+
+.container.card {
+  margin-left: 150px;
+  width: 500px;
+  height: 40px;
+}
+
+/* styles for nav after login*/
+.sprofile {
+  height: 35px;
+  width: 40px;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+}
+
+/*styles for student home page  */
+.sbody {
+  background-image: url(images/student-home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.sphead {
+  margin: 100px 50px 0px 50px;
+  height: 45px;
+}
+
+.card-recent {
+  background: rgba(204, 204, 204, 0.5);
+  cursor: pointer;
+  margin: 0px 50px 15px 50px;
+}
+
+.showall {
+  background: rgba(204, 204, 204, 0.5);
+  margin: -15px 50px 20px 50px;
+}
+.showall .btn {
+  margin: 10px;
+  float: right;
+}
+
+.explore {
+  margin: 50px 50px -40px 50px;
+}
+
+.grid-shome {
+  margin: 40px;
+}
+
+.ibody {
+  background-image: url(images/instructorbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.upload {
+  background: rgba(204, 204, 204, 0.1);
+  border: 0px;
+  margin: 100px 50px 20px 50px;
+}
+
+.upload .btn {
+  color: white;
+  border-width: 5px;
+  width: 100%;
+  margin: 0px;
+}
+
+.upload-body {
+  color: white;
+  background-image: url(images/instructorbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.upload-form {
+  margin: 100px 20px 30px 30px;
+}
+
+.next-btn {
+  float: right;
+  margin: 40px 50px 0 0 ;
+}

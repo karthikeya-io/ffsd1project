@@ -34,10 +34,20 @@
           <input class="form-control me-2" type="search" placeholder="Search Courses" aria-label="Search">
           <button class="btn btn-success" type="submit">Search</button>
         </form>
+        
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="icontext" href="/signup"> <img class= "icon" src="images/user-alt-512.webp"> Sign Up</a></li>
-            <li><a class="icontext" href="/login"> <img class= "icon" src="images/Icons8-Windows-8-User-Interface-Login.ico"> Log In</a></li>
-          </ul>
+            <div class="btn-group dropstart">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class= "sprofile nav-item" src="images/user-alt-512.webp"></a>
+                </button>
+                <ul class="dropdown-menu logedin dropstart" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/profile">profile</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Log Out</a></li>
+                  </ul>
+              </div>
+        </ul>
       </div>
     </div>
   </nav>
