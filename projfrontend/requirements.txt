@@ -1,7 +1,4 @@
 administrator page
-home page for student
-instructor dashboard aka homepage
-upload course button -> page to load lessons
 search button functationality and sort filter(courses)
 rate button in course page
-
+payment gateway Page
