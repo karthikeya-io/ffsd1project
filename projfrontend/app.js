@@ -81,10 +81,6 @@ app.get("/business", (req, res) => {
   res.render("business");
 });
 
-app.get("/edudetails", (req, res) => {
-  res.render("education");
-});
-
 app.get("/help", (req, res) => {
   res.render("help", { heactive: "active" });
 });
