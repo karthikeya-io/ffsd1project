@@ -13,7 +13,7 @@ exports.getUserById = (req, res, next, id) => {
 }
 
 exports.getUser = (req, res) => {
-    req.profile.salt = undefined
-    req.profile.encry_password = undefined
-    return res.render('/profile', {name: req.profile.name , mail: req.profile.email})
+    // req.profile.salt = undefined
+    // req.profile.encry_password = undefined
+    return res.render('login')
 }

@@ -35,7 +35,7 @@ app.use(cookieParser());
 
 //my routes
 app.use("/api", authRoutes)
-app.use('/api', userRoutes)
+app.use('/api', userRoutes)//route incomplete
 
 
 const port = 3000;
@@ -50,7 +50,6 @@ app.get("/", (req, res) => {
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
-
 
 
 app.get('/tsignup', (req, res) => {
