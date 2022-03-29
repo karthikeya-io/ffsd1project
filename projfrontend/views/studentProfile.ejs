@@ -14,6 +14,10 @@
 </head>
 <body>
   <%- include('./partials/nav.ejs') %>
+  <form action="http://localhost:15797/api/values" method="get">
+    <input type="hidden" name="headers[Authorization]" value="Bearer token" />
+    <input type="submit" />
+</form>
 
     <!-- Student Profile -->
     <div class="profile-body">
@@ -27,7 +31,7 @@
                         <thead>
                           <tr>
                             <th scope="col">Name</th>
-                            <th scope="col">Karthikeya Bethu</th>
+                            <th scope="col">Karthikeya</th>
                           </tr>
                         </thead>
                         <tbody>

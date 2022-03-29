@@ -23,16 +23,16 @@
                  <div class="col-lg-7 px-5 pt-5">
                     <h1 class="font-weight-bold py-3" >Welcome!</h1>
                     <h4>Sign into your account</h4>
-                     <form onsubmit = "event.preventDefault(); myValidation();">
+                     <form onsubmit = " myValidation(); " method="post" action="/api/signin">
                          <div class="form-row">
                              <div class="col-lg-7">
-                                 <input type="email" placeholder="Email-Address" class="form-control my-3 p-4" id="email">
+                                 <input type="email" placeholder="Email-Address" class="form-control my-3 p-4" id="email" name="email">
                                  <small class="error-email"></small>
                              </div>
                          </div>
                          <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="******" class="form-control my-3 p-4" id="password">
+                                <input type="password" placeholder="******" class="form-control my-3 p-4" id="password" name="password">
                                 <small class="error-password"></small>
 
                             </div>
@@ -61,6 +61,7 @@
 
         if(EmailAddress.length === 0) {
             document.querySelector('.error-email').innerText = "Enter email"
+            event.preventDefault();
             return false
         } else {
             document.querySelector('.error-email').innerText = ""
@@ -68,6 +69,7 @@
              document.querySelector('.error-email').innerText = ""
             }else {
                 document.querySelector('.error-email').innerText = "Invalid email"
+                event.preventDefault();
                 return false
             }
         }
@@ -77,14 +79,12 @@
 
         if(passwordValue.length === 0) {
             document.querySelector('.error-password').innerText = "Enter Password"
+            event.preventDefault();
             return false
         } else {
             document.querySelector('.error-password').innerText = ""  
-        } 
+        }
         return true       
     }
-    
-
-      console.log(email);
   </script>
 </html>

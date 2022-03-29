@@ -1,11 +1,28 @@
+require('dotenv').config()
+
+
 const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
 const bodyParser = require("body-parser");
-const res = require("express/lib/response");
+const cookieParser = require("cookie-parser");
+
+//myroutes
+const authRoutes = require("./routes/auth")
+const userRoutes = require('./routes/user')
+
+
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
+//DB Connection
+mongoose.connect('mongodb://localhost:27017/course').then(() => {
+  console.log('db connected');
+});
+
+
+//middlewares
 app.use(express.static(__dirname + "/public"));
 
 app.use(
@@ -13,6 +30,13 @@ app.use(
     extended: true,
   })
 );
+app.use(cookieParser());
+
+
+//my routes
+app.use("/api", authRoutes)
+app.use('/api', userRoutes)
+
 
 const port = 3000;
 app.listen(port, () => {
@@ -27,9 +51,20 @@ app.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+
+
+app.get('/tsignup', (req, res) => {
+  res.render('Buissnesssignup')
+})
+
 app.get("/login", (req, res) => {
   res.render("login");
 });
+
+app.post("/login", (req, res) => {
+  res.render("index");
+});
+
 
 app.get("/courses", (req, res) => {
   res.render("courses", { Cactive: "active" });
@@ -78,7 +113,10 @@ app.get("/ihome", (req, res) => {
   app.get('/lesson', (req, res) => {
     res.render('lessonupload')
   })
-// app.post("/", (req, res) => {
+
+  
+
+  // app.post("/", (req, res) => {
 //      const data = req.body;
 //     res.render('details', {name: data.projectName, roll: data.roll, details: data.details})
 // })

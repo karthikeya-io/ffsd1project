@@ -144,24 +144,18 @@ a:hover {
 }
 
 .login-img {
+  float: left;
   border-radius: 45px 150px;
   overflow: hidden;
   position: relative;
-  height: 100%;
-  width: 100%;
-  padding-top: 20px;
+  height: 75%;
+  width: 120%;
+  margin: 50px 0px 0  -60px;
 }
 
-.login-img2 {
-  border-radius: 45px 150px;
-  overflow: hidden;
-  position: relative;
-  height: 90%;
-  width: 100%;
-  padding-top: 20px;
-  margin-top: 5%;
+.form-row {
+  width: 500px;
 }
-
 .btn-login {
   width: 100%;
   height: 50px;
@@ -170,7 +164,7 @@ a:hover {
 }
 
 .signup {
-  margin: 100px 0 0 50px;
+  margin: 50px 0 0 0
 }
 
 /* styles for course page */
@@ -698,7 +692,7 @@ a:hover {
       appearance: none;
     }
     
-    .form-wrapper input[type="text"],
+    .form-wrapper input[type="text"],.form-wrapper input[type="email"],
     .form-wrapper input[type="password"]{
       display: block;
       padding: 10px;
@@ -759,3 +753,6 @@ a:hover {
       color: #3498db;
     }
 
+.error {
+  color: rgb(214, 36, 36);
+}
