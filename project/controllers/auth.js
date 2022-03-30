@@ -86,8 +86,6 @@ exports.isSignedIn = (req, res, next) => {
 
 exports.isAuthenticated = (req, res, next) => {
     let checker = req.profile && req.profile._id.toString() == req._id;
-    console.log(req.profile._id.toString());
-    console.log(req._id);
     if(!checker) {
         return res.status(403).json({
             error: "ACCESS DENIED"
