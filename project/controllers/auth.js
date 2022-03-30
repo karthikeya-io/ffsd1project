@@ -2,7 +2,6 @@ const User = require("../models/user")
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 let expressJwt = require('express-jwt');
-const { json } = require("express/lib/response");
 
 
 exports.signup = (req, res) => {
@@ -20,6 +19,8 @@ exports.signup = (req, res) => {
     user.lastname = data.lastname
     user.email = data.email
     user.password = data.password
+    user.address = data.address
+    user.phoneno = data.phoneno
 
     user.save((err, user) => {
         if(err) {
@@ -68,9 +69,6 @@ exports.signin = (req, res) => {
 
 exports.signout = (req, res) => {
     res.clearCookie("token");
-    res.json({
-        message: "User signout successfully"
-    });
     res.redirect('/')
 }
 

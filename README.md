@@ -1,8 +1,7 @@
 # ffsd1project
-
-Before commiting , please pull the changes , then push .
-
-Before commiting , first cross check with others.
-
-i am aasim
-hello aasim
+you need to have node and mongodb to run
+To run the application
+1) navigate to the folder in terminal where package.json is present
+run
+---> npm install
+---> npm start

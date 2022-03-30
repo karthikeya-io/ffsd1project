@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 const { v4: uuidv4 } = require('uuid');
+const { required } = require('nodemon/lib/config');
 
 const userSchema = new mongoose.Schema( {
     name: {
@@ -32,6 +33,15 @@ const userSchema = new mongoose.Schema( {
     courses: {
         type: Array,
         default: []
+    },
+    address: {
+        type: String,
+        maxlength: 100,
+        trim: true,
+    },
+    phoneno: {
+        type: Number,
+        required:true
     }
 
 },
