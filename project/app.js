@@ -99,6 +99,9 @@ app.get("/ihome", (req, res) => {
     res.render("instructorhome", { Hactive: "active" });
   });
 
+  app.post("/ihome", (req, res) => {
+    res.render("instructorhome", { Hactive: "active" });
+  });
   app.get("/upload", (req, res) => {
     res.render("courseupload");
   });
