@@ -15,8 +15,8 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" >
+      <div class="container-fluid" >
        <a class="navbar-brand" href="/">The Error List</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
@@ -28,65 +28,94 @@
            </ul>
         </div>
     </nav>
-  <div class="container">
+  <div class="container" style="margin-top:100px">
     <div class="wrapper">
-      <ul class="steps">
-        <li class="is-active">Step 1</li>
-        <li>Step 2</li>
-        <li>Step 3</li>
-      </ul>
-      <form class="form-wrapper">
-        <fieldset class="section is-active">
-          <h3>Your Details</h3>
-          <input type="text" name="Full name" id="T_firstname" placeholder="First Name">
-          <input type="text" name="Full name" id="T_lasttname" placeholder="Last Name">
-          <input type="text" name="email" id="T_email" placeholder="Email">
-          <input type="text" class="form-control" id="T_inputAddress" placeholder="Address Line 1">
-          <input type="text" class="form-control" id="T_phoneno" placeholder="Phone number">
-          <div class="button">Next</div>
-        </fieldset>
-        <fieldset class="section">
+      <form class="form-wrapper" onsubmit="myValidation();" method="post" action="/tsignup" >
+          <h3  >Your Details</h3>
+          <input type="text" name="T_firstname" id="T_firstname" placeholder="First Name" required>
+          <small class="error-name error"></small>
+          <input type="text" name="T_lasttname" id="T_lasttname" placeholder="Last Name" >
+          <small class="error-lname error"></small>
+          <input type="email" name="T_email" id="T_email" placeholder="Email" required>
+          <small class="error-email error"></small>
+          <input type="text" class="form-control" id="T_inputAddress" placeholder="Address Line 1" >
+          <small class="error-address error"></small>
+          <input type="text" class="form-control" id="T_phoneno" placeholder="Phone number" required >
+          <small class="error-phoneno error"></small>
           <h3>Institute Details<h3>
-          <input type="text" class="form-control" id="T_institute_name" placeholder="Name of Institution">
-          <input type="text" class="form-control" id="T_institute_ID" placeholder="Institute's Unique ID ">
-          <div class="button">Next</div>
-        </fieldset>
-        <fieldset class="section">
+          <input type="text" class="form-control" id="T_institute_name" placeholder="Name of Institution" required >
+          <small class="error-instituename error"></small>
+          <input type="text" class="form-control" id="T_institute_ID" placeholder="Institute's Unique ID " required>
+          <small class="error-instituteid error"></small>
           <h3>Choose a Password</h3>
-          <input type="password" name="password" id="T_password" placeholder="Password">
-          <input type="password" name="password2" id="T_password2" placeholder="Re-enter Password">
+          <input type="password" name="T_password" id="T_password" placeholder="Password" required>
+          <small class="error-password error"></small>
+          <input type="password" name="password2" id="T_password2" placeholder="Re-enter Password" required>
+          <small class="error-password2 error"></small>
           <input class="submit button" type="submit" value="Sign Up">
-        </fieldset>
-        <fieldset class="section">
-          <h3>Account Created!</h3>
-          <p>Your Account Verification is under process.<br> You will be notified when your account is accepted via email</p>
-          <br>
-        </fieldset>
       </form>
     </div>
   </div>
   
 </body>
 <script>
-$(document).ready(function(){
-  $(".form-wrapper .button").click(function(){
-    var button = $(this);
-    var currentSection = button.parents(".section");
-    var currentSectionIndex = currentSection.index();
-    var headerSection = $('.steps li').eq(currentSectionIndex);
-    currentSection.removeClass("is-active").next().addClass("is-active");
-    headerSection.removeClass("is-active").next().addClass("is-active");
 
-    $(".form-wrapper").submit(function(e) {
-      e.preventDefault();
-    });
+const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      
+  function myValidation() {
+    const name= document.querySelector('#T_firstname');
+    const email = document.querySelector('#T_email')
+    const address = document.querySelector('#T_inputAddress')
+    const phoneno = document.querySelector('#T_phoneno')
+    const password = document.querySelector('#T_password')
+    const password2 = document.querySelector('#T_password2')
+    const nameValue = name.value
+    const EmailAddress = email.value
+    const addressValue = address.value
+    const phonenoValue = phoneno.value
+    const passwordValue = password.value
+    const password2Value = password2.value
 
-    if(currentSectionIndex === 3){
-      $(document).find(".form-wrapper .section").first().addClass("is-active");
-      $(document).find(".steps li").first().addClass("is-active");
+    if(nameValue.length < 3) {
+      console.log(nameValue)
+      document.querySelector('.error-name').innerText = "Name must be atleast 3 characters"
+      event.preventDefault();
+      return false
+  } else {
+      document.querySelector('.error-name').innerText = ""  
+  }
+    if(EmailAddress.length === 0) {
+        document.querySelector('.error-email').innerText = "Enter email"
+        event.preventDefault();
+        return false
+    } else {
+        document.querySelector('.error-email').innerText = ""
+        if(EmailAddress.match(mailformat)) { 
+         document.querySelector('.error-email').innerText = ""
+        }else {
+            document.querySelector('.error-email').innerText = "Invalid email"
+            event.preventDefault();
+            return false
+        }
     }
-  });
-});
+
+    if(passwordValue < 5) {
+        document.querySelector('.error-password').innerText = "Password must be atleast 5 characters"
+        event.preventDefault();
+        return false
+    }else {
+      document.querySelector('.error-password').innerText = ""  
+  }
+
+    if(passwordValue !== password2Value) {
+        document.querySelector('.error-password').innerText = "Password not matching"
+        event.preventDefault();
+        return false
+    } else {
+        document.querySelector('.error-password').innerText = ""  
+    }
+    return true       
+}
 </script>
  </html>
 
