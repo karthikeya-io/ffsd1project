@@ -22,6 +22,7 @@
       <form class="form-wrapper" onsubmit="myValidation();  " method="post" action="/api/signup" > 
         <fieldset class="section is-active">
           <h3>Your Details</h3>
+          <input type="hidden" name="role" value="0">
           <input type="text" name="name" id="name" placeholder="First Name" required>
           <small class="error-name error"></small>
           <input type="text" name="lastname" id="lasttname" placeholder="Last Name" >
@@ -85,7 +86,7 @@
         }
     }
 
-    if(passwordValue < 5) {
+    if(passwordValue.length < 5) {
         document.querySelector('.error-password').innerText = "Password must be atleast 5 characters"
         event.preventDefault();
         return false

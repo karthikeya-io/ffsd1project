@@ -1,7 +1,10 @@
 const User = require("../models/user")
+const Student = require("../models/student")
+const Educator = require("../models/educator")
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 let expressJwt = require('express-jwt');
+const student = require("../models/student");
 
 
 exports.signup = (req, res) => {
@@ -13,17 +16,47 @@ exports.signup = (req, res) => {
         });
     }
 
-    const user = new User()
     const data =  req.body
-    user.name = data.name
-    user.lastname = data.lastname
+    const role = data.role
+    const user = new User()
     user.email = data.email
     user.password = data.password
-    user.address = data.address
-    user.phoneno = data.phoneno
+    user.role = role
+
+    if(role == 0) {
+        const student = new Student()
+        student.name = data.name
+        student.lastname = data.lastname
+        student.address = data.address
+        student.phoneno = data.phoneno
+        student.save((err) => {
+            if(err) {
+                console.log(err);
+                return res.status(400).json( {
+                    err: "NOT able to save user in DB"
+                })
+            }
+        })
+    
+        user.student = student;
+    } else if(role == 1) {
+        const educator = new Educator(data)
+        educator.save((err) => {
+            if(err) {
+                console.log(err);
+                return res.status(400).json( {
+                    err: "NOT able to save user in DB"
+                })
+            }
+        })
+        user.educator = educator
+    }
+
+    
 
     user.save((err, user) => {
         if(err) {
+            console.log(err);
             return res.status(400).json( {
                 err: "NOT able to save user in DB"
             }) 
@@ -63,7 +96,11 @@ exports.signin = (req, res) => {
         res.cookie("token", token, {expire: new Date() + 9999});
         //send response to front end
         const {_id, name, email, role} = user;//destructuring
-        res.redirect('/api/user')
+        if(user.role == 0)  {
+            res.redirect('/api/user')
+        } else {
+            res.redirect('/api/educator')
+        }
     })
 }
 

@@ -30,17 +30,18 @@
     </nav>
   <div class="container" style="margin-top:100px">
     <div class="wrapper">
-      <form class="form-wrapper" onsubmit="myValidation();" method="post" action="/tsignup" >
-          <h3  >Your Details</h3>
-          <input type="text" name="T_firstname" id="T_firstname" placeholder="First Name" required>
+      <form class="form-wrapper" onsubmit="myValidation();" method="post" action="/api/signup">
+          <h3>Your Details</h3>
+          <input type="hidden" name="role" value="1">
+          <input type="text" name="name" id="T_firstname" placeholder="First Name" required>
           <small class="error-name error"></small>
-          <input type="text" name="T_lasttname" id="T_lasttname" placeholder="Last Name" >
+          <input type="text" name="lastname" id="T_lasttname" placeholder="Last Name" >
           <small class="error-lname error"></small>
-          <input type="email" name="T_email" id="T_email" placeholder="Email" required>
+          <input type="email" name="email" id="T_email" placeholder="Email" required>
           <small class="error-email error"></small>
-          <input type="text" class="form-control" id="T_inputAddress" placeholder="Address Line 1" >
+          <input type="text" class="form-control" name="address" id="T_inputAddress" placeholder="Address Line 1" >
           <small class="error-address error"></small>
-          <input type="text" class="form-control" id="T_phoneno" placeholder="Phone number" required >
+          <input type="text" class="form-control" name="phoneno" id="phoneno" placeholder="Phone number" required >
           <small class="error-phoneno error"></small>
           <h3>Institute Details<h3>
           <input type="text" class="form-control" id="T_institute_name" placeholder="Name of Institution" required >
@@ -48,9 +49,9 @@
           <input type="text" class="form-control" id="T_institute_ID" placeholder="Institute's Unique ID " required>
           <small class="error-instituteid error"></small>
           <h3>Choose a Password</h3>
-          <input type="password" name="T_password" id="T_password" placeholder="Password" required>
+          <input type="password" name="password" id="password" placeholder="Password" required>
           <small class="error-password error"></small>
-          <input type="password" name="password2" id="T_password2" placeholder="Re-enter Password" required>
+          <input type="password" name="password2" id="password2" placeholder="Re-enter Password" required>
           <small class="error-password2 error"></small>
           <input class="submit button" type="submit" value="Sign Up">
       </form>
