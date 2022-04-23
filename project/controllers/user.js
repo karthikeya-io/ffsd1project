@@ -19,13 +19,13 @@ exports.getUserById = (req, res, next, id) => {
                 })
         }
         req.profile = user
+        req.profile.password = undefined
         next()
     })
 }
 
 exports.getUser = (req, res) => {
     // req.profile.salt = undefined
-    req.profile.password = undefined
     console.log(req.profile);
     let name = "abc"
     if(req.profile.role == 0) {

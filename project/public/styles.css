@@ -66,6 +66,10 @@ a:hover {
   margin: 20px;
 }
 
+.course-card {
+  height: 370px;
+}
+
 .card.card-shadow {
   border: none;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
@@ -78,8 +82,12 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
+.card-header.card-image.card-title{
+  padding: 10px;
+  overflow: hidden;
+}
 .card-header.card-image {
-  padding: 0;
+  padding: 0px;
   overflow: hidden;
 }
 
@@ -772,4 +780,28 @@ a:hover {
 
 .error {
   color: rgb(214, 36, 36);
+}
+
+.clist-body {
+  margin-top: 80px;
+}
+
+.clist-card {
+  background-color: coral;
+  color: white;
+}
+
+.clist-text {
+  min-height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+}
+
+
+.clist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 40px;
 }

@@ -16,11 +16,17 @@ app.set("view engine", "ejs");
 //myroutes
 const authRoutes = require("./routes/auth")
 const userRoutes = require('./routes/user')
+const courseRoutes = require("./routes/course")
+const adminRoutes = require("./routes/admin")
+
 
 
 //DB Connection
-mongoose.connect('mongodb://localhost:27017/course').then(() => {
-  console.log('db connected');
+mongoose.connect('mongodb://localhost:27017/course', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+    console.log('db connected');
 });
 
 
@@ -37,7 +43,10 @@ app.use(cookieParser());
 
 //my routes
 app.use("/api", authRoutes)
-app.use('/api', userRoutes)//route incomplete
+app.use('/api', userRoutes)
+app.use('/course', courseRoutes)
+app.use('/admin', adminRoutes)
+
 
 
 const port = 3000;
@@ -71,9 +80,6 @@ app.post("/login", (req, res) => {
 });
 
 
-app.get("/courses", (req, res) => {
-  res.render("courses", { Cactive: "active" });
-});
 
 app.get("/course", (req, res) => {
   res.render("course");
@@ -102,13 +108,6 @@ app.get("/ihome", (req, res) => {
   app.post("/ihome", (req, res) => {
     res.render("instructorhome", { Hactive: "active" });
   });
-  app.get("/upload", (req, res) => {
-    res.render("courseupload");
-  });
-
-  app.post('/upload', (req, res) => {
-      res.redirect('/lesson')
-  })
 
   app.get('/lesson', (req, res) => {
     res.render('lessonupload')
