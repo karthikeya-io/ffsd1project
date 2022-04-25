@@ -5,17 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 const { required } = require('nodemon/lib/config');
 
 const userSchema = new mongoose.Schema( {
-    // name: {
-    //     type: String,
-    //     required: true,
-    //     maxlength: 32,
-    //     trim: true
-    // },//name: String can also be written
-    // lastname: {
-    //     type: String,
-    //     maxlength: 32,
-    //     trim: true,
-    // },
+
     email: {
         type: String,
         required: true,
@@ -39,19 +29,10 @@ const userSchema = new mongoose.Schema( {
         type: Number,
         default: 0
     },
-    // courses: {
-    //     type: Array,
-    //     default: []
-    // },
-    // address: {
-    //     type: String,
-    //     maxlength: 100,
-    //     trim: true,
-    // },
-    // phoneno: {
-    //     type: Number,
-    //     required:true
-    // }
+    flag: {
+        type: Number,
+        default: 0
+    }
 
 },
     {timestamps: true}

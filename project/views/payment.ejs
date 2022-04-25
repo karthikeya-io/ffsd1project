@@ -14,19 +14,23 @@
     
     <title>Document</title>
 </head>
-<body>
+<body style="background-image: linear-gradient(white, rgb(13, 110, 253)); background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+">
   <%- include('./partials/nav.ejs') %>
   <div class="container">
     <div class="wrapper ">
       <br><br><br><br>  
-      <form class="form-wrapper gradient"  method="post" action="/admin/addcategory" > 
+      <div class="form-wrapper gradient"  method="post" action="/admin/addcategory" > 
         <fieldset class="section is-active">
-          <h3>Add new category for course</h3>
-          <input type="text" name="name" id="name" placeholder="Category" required>
-          <input class="submit button" type="submit" value="Add Category">
+          <h3>Course Name: <p class="payment-list"> <%=course.title%> </p>  </h3>
+          <h3>Category: <p class="payment-list"> <%=course.category.name%></p></h3>
+          <h3>Price: <p class="payment-list"><%=course.price%></p></h3>
+          <a href="/course/enroll/<%=course._id%>"><button class="submit button">Pay now and enroll </button></a>
         </fieldset>
         
-      </form>
+      </div>
     </div>
   </div>
   

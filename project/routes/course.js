@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Course = require("../models/course")
-const { courseform, addCourse, allCourses, clist, course, getCourseById } = require('../controllers/course')
+const { courseform, addCourse, allCourses, clist, course, getCourseById, getLessonById, searchCourse, paymentpage, enrollCourse } = require('../controllers/course')
 const {  getUserById } = require('../controllers/user')
-const {  isSignedIn } = require('../controllers/auth')
+const {  isSignedIn, isAuthenticated } = require('../controllers/auth')
 const Lesson = require("../models/lesson")
 const multer = require('multer');
 const uuid = require("uuid").v4;
@@ -62,12 +62,17 @@ router.get('/clist/:userId', clist)
 
 router.get("/upload/:courseId", (req, res) => {
     res.render("lessonupload", {cid: req.params.courseId});
-  });
+});
 
 
 router.get('/courses', allCourses)
-
+router.post('/search', searchCourse)
 router.param('courseId', getCourseById)
+router.param('lessonId', getLessonById)
 router.get('/course/:courseId', course)
+router.get('/lesson/:courseId/:lessonId', course)
+
+router.get('/payment/:courseId', paymentpage)
+router.get('/enroll/:courseId', isSignedIn ,enrollCourse)
 
 module.exports = router;

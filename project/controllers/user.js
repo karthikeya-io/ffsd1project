@@ -30,8 +30,10 @@ exports.getUser = (req, res) => {
     let name = "abc"
     if(req.profile.role == 0) {
         name = req.profile.student.name
+        courses = req.profile.student.courses
     } else {
         name = req.profile.educator.name
+        courses = req.profile.educator.courses
     }
-    res.render('studentProfile', {name: name, mail: req.profile.email})
+    res.render('studentProfile', {name: name, mail: req.profile.email, courses})
 }

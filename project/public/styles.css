@@ -661,7 +661,7 @@ a:hover {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
-      background-color: rgb(13,110,253);;
+      background-color: rgb(13,110,253);
       opacity: 0;
       -webkit-transform: scale(1, 0);
       -ms-transform: scale(1, 0);
@@ -804,4 +804,9 @@ a:hover {
   gap: 1rem;
   align-items: flex-start;
   margin-top: 40px;
+}
+
+.payment-list {
+  display: inline;
+  color: aliceblue;
 }

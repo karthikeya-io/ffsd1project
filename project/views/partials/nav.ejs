@@ -30,8 +30,8 @@
             <a href="/help" class="nav-link <%= locals.heactive || ''%>">Help</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search Courses" aria-label="Search">
+        <form class="d-flex" method="post" action="/course/search">
+          <input name="cname" class="form-control me-2" type="search" placeholder="Search Courses" aria-label="Search">
           <button class="btn btn-success" type="submit">Search</button>
         </form>
         <ul class="nav navbar-nav navbar-right">

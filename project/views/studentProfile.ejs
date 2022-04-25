@@ -36,7 +36,7 @@
                           </tr>
                           <tr>
                             <td>Courses Enrolled</td>
-                            <td>4</td>
+                            <td><%=locals.courses.length%></td>
                           </tr>
                           <tr>
                             <td>Courses Completed</td>
@@ -52,14 +52,17 @@
         <div class="profile-right">
             <div class="profile-courses">
             <h2>Enrolled Courses</h2>
+
+            <% for(i=0; i< locals.courses.length; i++) {%>
                 <div class="card">
-                    <h5 class="card-header">Course | IIIT Sri City</h5>
+                    <h5 class="card-header">Course</h5>
                     <div class="card-body profile-card-body">
-                      <h5 class="card-title">Fundamentals of Fullstack development</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="/course" class="btn btn-primary">Go to Course Page</a>
+                      <h5 class="card-title"><%=locals.courses[i].title%></h5>
+                      <p class="card-text"><%=locals.courses[i].desc%></p>
+                      <a href="/course/course/<%=locals.courses[i]._id%>" class="btn btn-primary">Go to Course Page</a>
                     </div>
                   </div>
+                  <%}%>
                   <div class="card">
                     <h5 class="card-header">Course | IIIT Sri City</h5>
                     <div class="card-body profile-card-body">

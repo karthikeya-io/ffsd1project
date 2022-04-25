@@ -113,6 +113,9 @@ app.get("/ihome", (req, res) => {
     res.render('lessonupload')
   })
 
+  app.get("/payment", (req, res) => {
+    res.render("payment");
+  });
   
 
   // app.post("/", (req, res) => {

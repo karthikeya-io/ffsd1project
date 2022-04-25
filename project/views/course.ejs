@@ -19,42 +19,21 @@
 
   </div>
       <div class="sidenav">
-        
-        <button class="sidebar-dropdown-btn">Module 0 
+        <%if(locals.modules != null) {%>
+       <% for(let i = 0; i< locals.modules.length; i++) {%>
+        <button class="sidebar-dropdown-btn"> <%=modules[i][0].modulename%>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-        <button class="sidebar-dropdown-btn">Module 1
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
 
-        <button class="sidebar-dropdown-btn">Module 2
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
+        <%modules[i].forEach(lesson => { %>
+            <a  href="/course/lesson/<%=course._id%>/<%=lesson._id%>"><%=lesson.title%></a>
 
-        <button class="sidebar-dropdown-btn">Module 3 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
+        <%})%>
+      </div>
 
+        <%}%>        
+        <%}%>        
       </div>
       
           
@@ -65,7 +44,14 @@
               <button type="button" class="btn btn-outline-primary-lg">Rate course</button>
             </div>
             <video controls id="course-video" preload="metadata">
-                <source src="/<%=locals.course.lessons[0].filePath%>" type="video/mp4">
+                <%if(locals.modules != null) {%>
+
+                <% if(locals.lesson!=undefined) {%>
+                <source src="/<%=locals.lesson.filePath%>" type="video/mp4">
+                  <%} else {%>
+                <source src="/<%=locals.modules[0][0].filePath%>" type="video/mp4">
+                <%}%>
+                <%}%>
               </video>
 
               <ul class="nav nav-tabs">
@@ -83,7 +69,9 @@
                 </li>
               </ul>
               <div>
-                <%=locals.course.lessons[0].desc%>
+                <% if(locals.lesson!=undefined) {%>
+                    <%=locals.lesson.desc%>
+                  <%}%>
               </div>
           </div>
           
