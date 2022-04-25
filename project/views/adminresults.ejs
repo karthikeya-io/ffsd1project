@@ -40,11 +40,12 @@
     </style>
 </head>
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <%- include('./partials/signedinnav.ejs') %>
     <div class="results-body">
 
     </div>
     <%for(let i =0; i< locals.users.length; i++) {%>
+        <%if(users[i].role !== 2) {%>
         <div class="card adminr-card">
         
             <div class="card-body">
@@ -62,7 +63,12 @@
                     </ul>
                     <%}%>
                     <a href="/admin/delete/<%=locals.users[i]._id%>"><button type="button" class="btn btn-outline-danger btn-list">Delete</button></a>
-                    <a href="/admin/block/<%=locals.users[i]._id%>"><button type="button" class="btn btn-outline-warning btn-list">Block</button></a>
+                    <%if( locals.users[i].flag === 0 ) {%>
+                        <a href="/admin/block/<%=locals.users[i]._id%>"><button type="button" class="btn btn-outline-warning btn-list">Block</button></a>
+                    <%} else {%>
+                        <a href="/admin/block/<%=locals.users[i]._id%>"><button type="button" class="btn btn-outline-warning btn-list">Unblock</button></a>
+                    <%}%>
+                    <%}%>
                 
                 
             </div>

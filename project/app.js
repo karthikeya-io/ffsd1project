@@ -58,9 +58,9 @@ app.get("/", (req, res) => {
   res.render("index", { Hactive: "active" });
 });
 
-app.get("/admin", (req, res) => {
-  res.render('admin', )
-})
+// app.get("/admin", (req, res) => {
+//   res.render('admin', )
+// })
 
 app.get("/signup", (req, res) => {
   res.render("signup");

@@ -90,6 +90,12 @@ exports.signin = (req, res) => {
             })
         }
 
+        if(user.flag === 1) {
+            return res.status(403).json({
+                error: "You are blocked by the admin"
+            })
+        }
+
         //create token
         const token = jwt.sign({_id: user._id}, process.env.SECRET)
         //put token in cookie
@@ -98,8 +104,10 @@ exports.signin = (req, res) => {
         const {_id, name, email, role} = user;//destructuring
         if(user.role == 0)  {
             res.redirect('/api/user')
-        } else {
+        } else if(user.role == 1) {
             res.redirect('/api/educator')
+        } else if(user.role == 2) {
+            res.render('admin')
         }
     })
 }
@@ -129,4 +137,22 @@ exports.isAuthenticated = (req, res, next) => {
         })
     }
     next();
+}
+
+exports.isAdmin = (req, res, next) => {
+    User.findById(req._id)
+        .exec((err, user) => {
+        if(err || !user) {
+            return res.status(400).json({
+                error: "No user was found in DB"
+            })
+        }
+        if(user.role !== 2) {
+            return res.status(403).json({
+                error: "ACCESS DENIED"
+            })
+        }
+    })
+    
+    next()
 }

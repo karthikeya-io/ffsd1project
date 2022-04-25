@@ -1,16 +1,19 @@
 const express = require('express')
 const router = express.Router()
-const {Category, addCategory, searchResults, blockUser} = require('../controllers/admin')
+const {Category, addCategory, searchResults, blockUser, adminHome, deleteUser} = require('../controllers/admin')
 const {  getUserById } = require('../controllers/user')
+const { isSignedIn, isAdmin } = require('../controllers/auth')
 
 
 router.param('userId', getUserById)
 
+router.get('',  isSignedIn, isAdmin, adminHome)
+router.get('/addcategory', isSignedIn, isAdmin, Category)
 
-router.get('/addcategory', Category)
+router.post('/addcategory', isSignedIn, isAdmin, addCategory)
 
-router.post('/addcategory', addCategory)
-
-router.post('/results', searchResults)
-router.get('/block/:userId', blockUser)
+router.post('/results', isSignedIn, isAdmin, searchResults)
+router.get('/block/:userId', isSignedIn, isAdmin, blockUser)
+router.get('/unblock/:userId', isSignedIn, isAdmin, blockUser)
+router.get('/delete/:userId', isSignedIn, isAdmin, deleteUser)
 module.exports = router

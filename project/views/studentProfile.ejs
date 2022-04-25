@@ -35,7 +35,7 @@
                             <td><%= locals.mail%></td>
                           </tr>
                           <tr>
-                            <td>Courses Enrolled</td>
+                            <td> Number of courses</td>
                             <td><%=locals.courses.length%></td>
                           </tr>
                           <tr>
@@ -44,6 +44,7 @@
                           </tr>
                         </tbody>
                       </table>
+                      <a href="/api/update/<%=locals.id%>" class="btn btn-primary">update Profile</a>
                 </div>
                 
             </div>
@@ -51,7 +52,7 @@
 
         <div class="profile-right">
             <div class="profile-courses">
-            <h2>Enrolled Courses</h2>
+            <h2>Your Courses</h2>
 
             <% for(i=0; i< locals.courses.length; i++) {%>
                 <div class="card">
