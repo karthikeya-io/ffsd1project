@@ -168,6 +168,7 @@ a:hover {
   height: 75%;
   width: 120%;
   margin-top: 5%;
+  padding-right: 20px;
 }
 
 .form-row {
@@ -219,6 +220,10 @@ a:hover {
 .active-lesson {
   background-color: rgb(13, 110, 253);
   color: white;
+}
+
+.busi{ 
+  padding-left:20px;
 }
 
 .dropdown-container {
@@ -358,7 +363,7 @@ a:hover {
 
 .help-active,
 .accordion:hover {
-  background-color: blueviolet;
+  background-color: rgb(13, 110, 253);
   font-size: large;
 }
 /*button{
@@ -371,12 +376,11 @@ a:hover {
   background-size: cover;
   background-attachment: fixed;
   margin-left: 100px;
-  margin-right: 600px;
+  margin-right: 800px;
 }
 
 .help-heading {
   margin-top: 100px;
-  background-color: blueviolet;
   font-size: xx-large;
 }
 .panel {
@@ -596,6 +600,10 @@ a:hover {
       max-width: 700px;
       margin: 0 auto;
       position: relative;
+    }
+
+    .container{
+      border : 1px solid rgb(0, 0, 0);
     }
     
     .container2{
