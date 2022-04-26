@@ -25,7 +25,7 @@
     <title>Document</title>
   </head>
   <body class="ibody">
-    <%- include('./partials/signedinnav.ejs') %>
+    <%- include('./partials/educatornav.ejs') %>
 
     <div class="card sphead">
         <div class="card-body">
@@ -46,7 +46,7 @@
 
     <div class="card showall">
         <div class="card-body">
-            <a href="/profile"><button type="button" class="btn btn-outline-primary btn-lg">Show All...</button></a>
+            <a href="/api/user/<%=locals.id%>"><button type="button" class="btn btn-outline-primary btn-lg">Show All...</button></a>
         </div>
     </div>
 

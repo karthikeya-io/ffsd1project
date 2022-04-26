@@ -1,7 +1,17 @@
 const User = require("../models/user")
+const Course = require("../models/course")
 
 exports.gethome = (req, res) => {
-    res.render('studenthome', {id: req._id})
+    Course.find({}, (err, courses) => {
+        if(err) {
+            console.log(err);
+            return res.status(400).json( {
+                err: "Something went wrong"
+            }) 
+        }
+        console.log(courses);
+        res.render('studenthome', {id: req._id, courses})
+    })
 }
 
 exports.getthome = (req, res) => {
@@ -61,14 +71,17 @@ exports.getUser = (req, res) => {
     // console.log(req.profile);
     const id = req.profile._id
     let name = "abc"
+    let role = 0
     if(req.profile.role == 0) {
         name = req.profile.student.name
         courses = req.profile.student.courses
+        role = 0
     } else {
         name = req.profile.educator.name
         courses = req.profile.educator.courses
+        role = 1
     }
-    res.render('studentProfile', {name: name, mail: req.profile.email, courses, id})
+    res.render('studentProfile', {name: name, mail: req.profile.email, courses, id, role})
 }
 
 exports.updateForm = (req, res) => {

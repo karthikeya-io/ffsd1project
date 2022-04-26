@@ -56,98 +56,23 @@
             <h2>Explore Other Courses</h2>
         </div>
     </div>
-      
     <div class="card-grid grid-shome">
-      <div class="card card-shadow">
-        <div class="card-header card-image">
-          <img src="/images/ffsdimg1.jpg" />
-        </div>
-        <div class="card-body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-          officiis! Non dolore labore laboriosam deleniti error reprehenderit
-          nesciunt possimus iure.
-        </div>
-        <div class="card-footer">
-          <a href="/courseinfo"
-            ><button type="button" class="btn btn-primary">Details</button></a
-          >
-          <button type="button" class="btn btn-outline-primary btn-lg">
-            Enroll Now
-          </button>
-        </div>
+    <% for (let i=0; i< locals.courses.length; i++) { %>
+
+      <div class="card card-shadow course-card">
+          <div class="card-header card-image card-title">
+              <h1><%= courses[i].title %></h1>
+              <!-- <img src="images/ffsdimg1.jpg"> -->
+          </div>
+          <div class="card-body">
+              <%= courses[i].desc %>
+          </div>
+          <div class="card-footer">
+            <a href="/courseinfo"><button type="button" class="btn btn-primary">Details</button></a>
+             <a href="/course/payment/<%= courses[i]._id %>"> <button type="button" class="btn btn-outline-primary btn-lg">Enroll Now</button> </a> 
+          </div>
       </div>
-      <div class="card card-shadow">
-        <div class="card-header card-image">
-          <img src="/images/ffsdimg1.jpg" />
-        </div>
-        <div class="card-body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-          officiis! Non dolore labore laboriosam deleniti error reprehenderit
-          nesciunt possimus iure.
-        </div>
-        <div class="card-footer">
-          <a href="courseinfo.html"
-            ><button type="button" class="btn btn-primary">Details</button></a
-          >
-          <button type="button" class="btn btn-outline-primary btn-lg">
-            Enroll Now
-          </button>
-        </div>
-      </div>
-      <div class="card card-shadow">
-        <div class="card-header card-image">
-          <img src="/images/ffsdimg1.jpg" />
-        </div>
-        <div class="card-body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-          officiis! Non dolore labore laboriosam deleniti error reprehenderit
-          nesciunt possimus iure.
-        </div>
-        <div class="card-footer">
-          <a href="courseinfo.html"
-            ><button type="button" class="btn btn-primary">Details</button></a
-          >
-          <button type="button" class="btn btn-outline-primary btn-lg">
-            Enroll Now
-          </button>
-        </div>
-      </div>
-      <div class="card card-shadow">
-        <div class="card-header card-image">
-          <img src="/images/ffsdimg1.jpg" />
-        </div>
-        <div class="card-body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-          officiis! Non dolore labore laboriosam deleniti error reprehenderit
-          nesciunt possimus iure.
-        </div>
-        <div class="card-footer">
-          <a href="courseinfo.html"
-            ><button type="button" class="btn btn-primary">Details</button></a
-          >
-          <button type="button" class="btn btn-outline-primary btn-lg">
-            Enroll Now
-          </button>
-        </div>
-      </div>
-      <div class="card card-shadow">
-        <div class="card-header card-image">
-          <img src="/images/ffsdimg1.jpg" />
-        </div>
-        <div class="card-body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-          officiis! Non dolore labore laboriosam deleniti error reprehenderit
-          nesciunt possimus iure.
-        </div>
-        <div class="card-footer">
-          <a href="courseinfo.html"
-            ><button type="button" class="btn btn-primary">Details</button></a
-          >
-          <button type="button" class="btn btn-outline-primary btn-lg">
-            Enroll Now
-          </button>
-        </div>
-      </div>
-    </div>
+  <% } %>
+</div>
   </body>
 </html>

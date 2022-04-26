@@ -13,7 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-  <%- include('./partials/signedinnav.ejs') %>
+  <%- include('./partials/educatornav.ejs') %>
 
     <div class="profile-body clist-body">
 
@@ -23,7 +23,7 @@
             <div class=" clist-grid">
             <% for (let i=0; i< locals.courses.length; i++) { %>
                 <div class="card clist-card">
-                    <h5 class="card-header">Course | IIIT Sri City</h5>
+                    <h5 class="card-header">Course</h5>
                     <div class="card-body profile-card-body">
                       <h3 class="card-title"><%= courses[i].title %></h3>
                       <p class="card-text clist-text"><%= courses[i].desc %></p>
